@@ -32,9 +32,6 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="login-logo">
           <img src={logo} alt="SPURS Logo" className="login-logo-img" />
-          <div className="login-logo-text">
-            <span className="login-logo-sub">社内ポータル</span>
-          </div>
         </div>
 
         <div className="login-divider" />

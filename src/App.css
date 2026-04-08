@@ -139,16 +139,7 @@
   object-fit: contain;
 }
 
-.login-logo-text {
-  display: flex;
-  flex-direction: column;
-}
 
-.login-logo-sub {
-  font-size: 13px;
-  color: var(--text-dim);
-  font-weight: 500;
-}
 
 .login-divider {
   height: 1px;
@@ -371,15 +362,7 @@ body {
   transform: scale(1.05);
 }
 
-.logo-portal-tag {
-  color: var(--text-dim);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  padding-left: 4px;
-  opacity: 0.8;
-}
+
 
 .nav-links {
   display: flex;

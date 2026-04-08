@@ -766,7 +766,6 @@ sales@spurs-inc.com
       <aside className="sidebar">
         <div className="logo-section">
           <img src={logo} alt="SPURS Logo" className="sidebar-logo" />
-          <span className="logo-portal-tag">ポータル</span>
         </div>
         
         <nav className="nav-links">
