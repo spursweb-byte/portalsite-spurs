@@ -133,30 +133,16 @@
   margin-bottom: 32px;
 }
 
-.login-logo-icon {
-  width: 52px;
+.login-logo-img {
   height: 52px;
-  background: linear-gradient(135deg, #00d26a 0%, #00a854 100%);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 900;
-  color: white;
-  box-shadow: 0 8px 24px rgba(0, 210, 106, 0.3);
+  width: auto;
+  object-fit: contain;
+  filter: invert(1) contrast(1.2);
 }
 
 .login-logo-text {
   display: flex;
   flex-direction: column;
-}
-
-.login-logo-main {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  color: var(--text-accent);
 }
 
 .login-logo-sub {
@@ -368,21 +354,33 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.logo-section h1 {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  color: var(--text-accent);
+.logo-section {
   margin-bottom: 48px;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.logo-section span {
-  color: var(--primary-green);
-  font-weight: 400;
-  font-size: 0.9em;
+.sidebar-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: invert(1) Contrast(1.2); /* Invert white to black, boost contrast */
+  transition: transform 0.3s ease;
+}
+
+.sidebar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-portal-tag {
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding-left: 4px;
+  opacity: 0.8;
 }
 
 .nav-links {
@@ -682,6 +680,13 @@ body {
   margin-bottom: 8px;
 }
 
+.url-copy-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
 .url-copy-cool {
   font-size: 13px !important;
   color: var(--text-dim) !important;
@@ -690,7 +695,41 @@ body {
   padding: 6px 10px;
   border-radius: 8px;
   display: inline-block;
-  margin-bottom: 24px !important;
+  margin-bottom: 0 !important;
+}
+
+.url-copy-btn-mini {
+  background: white;
+  border: 1px solid var(--border-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.url-copy-btn-mini:hover {
+  background: var(--primary-green-glow);
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 210, 106, 0.1);
+}
+
+.url-copy-btn-mini.copied {
+  background: var(--primary-green);
+  color: white;
+  border-color: var(--primary-green);
+  font-size: 10px;
+  font-weight: 800;
+  width: auto;
+  padding: 0 10px;
 }
 
 .status-badge-cool {

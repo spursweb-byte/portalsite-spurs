@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import logo from './assets/logo.png'
 import { 
   Globe, 
   ShieldCheck, 
@@ -146,7 +147,25 @@ function App() {
 
                     <div className="iroha-card-content">
                       <h3>{site.name}</h3>
-                      <p className="url-copy-cool">{site.url.replace('https://', '')}</p>
+                      <div className="url-copy-container">
+                        <p className="url-copy-cool">{site.url.replace('https://', '')}</p>
+                        <button 
+                          className="url-copy-btn-mini" 
+                          onClick={(e) => {
+                            navigator.clipboard.writeText(site.url);
+                            const btn = e.currentTarget;
+                            const originalContent = btn.innerHTML;
+                            btn.innerHTML = 'Copied!';
+                            btn.classList.add('copied');
+                            setTimeout(() => {
+                              btn.innerHTML = originalContent;
+                              btn.classList.remove('copied');
+                            }, 1500);
+                          }}
+                        >
+                          <Copy size={14} />
+                        </button>
+                      </div>
                     </div>
 
                     <div className="iroha-card-footer">
@@ -746,7 +765,8 @@ sales@spurs-inc.com
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="logo-section">
-          <h1>SPURS <span>ポータル</span></h1>
+          <img src={logo} alt="SPURS Logo" className="sidebar-logo" />
+          <span className="logo-portal-tag">ポータル</span>
         </div>
         
         <nav className="nav-links">
