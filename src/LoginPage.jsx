@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from './assets/logo.png'
 import { signInWithPopup } from 'firebase/auth'
 import { auth, googleProvider } from './firebase'
 import { useAuth } from './AuthContext'
