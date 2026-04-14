@@ -54,6 +54,31 @@ function App() {
     localStorage.setItem('iroha_recipient_name', value)
   }
 
+  const handleDownloadFile = async (e, fileUrl, fileName) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(fileUrl);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback: Open in new tab if fetch fails
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = fileName;
+      link.target = "_blank";
+      link.click();
+    }
+  };
+
   const initialSystems = [
     { 
       id: 1, 
@@ -329,13 +354,13 @@ function App() {
                             <h4>{item.name}</h4>
                             <span className="file-meta">{item.type} • {item.size} • 最新版</span>
                           </div>
-                          <a 
-                            href={item.file}
-                            download={item.downloadName || true} 
+                          <button 
+                            onClick={(e) => handleDownloadFile(e, item.file, item.downloadName || item.name)}
                             className="download-icon-btn"
+                            style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}
                           >
                             <Download size={18} />
-                          </a>
+                          </button>
                         </div>
                       </motion.div>
                     ))}
