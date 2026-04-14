@@ -44,6 +44,15 @@ import './App.css'
 function App() {
   const { user, loading } = useAuth()
   const [activeItem, setActiveItem] = useState('systems')
+  const [recipientName, setRecipientName] = useState(() => {
+    return localStorage.getItem('iroha_recipient_name') || ''
+  })
+
+  const handleRecipientNameChange = (e) => {
+    const value = e.target.value
+    setRecipientName(value)
+    localStorage.setItem('iroha_recipient_name', value)
+  }
 
   const initialSystems = [
     { 
@@ -253,9 +262,9 @@ function App() {
       case 'templates':
         const templatesList = [
           { category: '契約関連', items: [
-            { name: '秘密保持契約書（NDA）', type: 'Word', size: '24KB', file: '/templates/nda.docx', downloadName: '秘密保持契約書_㈱〇〇御中.docx' },
-            { name: '業務委託基本契約書（法人）', type: 'Word', size: '32KB', file: '/templates/kihon-keiyaku.docx', downloadName: '基本契約書_㈱〇〇御中.docx' },
-            { name: 'フリーランス基本契約書', type: 'Word', size: '28KB', file: '/templates/freelance-keiyaku.docx', downloadName: 'フリーランス基本契約書_〇〇様.docx' }
+            { name: '秘密保持契約書（NDA）', type: 'Word', size: '24KB', file: '/templates/nda.docx', downloadName: `秘密保持契約書_${recipientName || '㈱〇〇'}御中.docx` },
+            { name: '業務委託基本契約書（法人）', type: 'Word', size: '32KB', file: '/templates/kihon-keiyaku.docx', downloadName: `基本契約書_${recipientName || '㈱〇〇'}御中.docx` },
+            { name: 'フリーランス基本契約書', type: 'Word', size: '28KB', file: '/templates/freelance-keiyaku.docx', downloadName: `フリーランス基本契約書_${recipientName || '〇〇'}様.docx` }
           ]},
           { category: 'セールス・提案', items: [
             { name: '会社説明資料（最新版）', type: 'PDF', size: '4.2MB', file: '/templates/company-profile.pdf', downloadName: 'Spurs会社説明資料.pdf' },
@@ -263,8 +272,8 @@ function App() {
             { name: 'フリーランス開業マニュアル', type: 'PDF', size: '1.2MB', file: '/templates/freelance-manual.pdf', downloadName: 'フリーランス開業マニュアル.pdf' }
           ]},
           { category: '社内管理・その他', items: [
-            { name: 'フリーランス用請求書', type: 'Excel', size: '45KB', file: '/templates/freelance-invoice.xlsx', downloadName: 'ご請求書_〇〇様.xlsx' },
-            { name: '勤務表フォーマット', type: 'Excel', size: '64KB', file: '/templates/timesheet.xlsx', downloadName: '勤務表_〇〇様.xlsx' }
+            { name: 'フリーランス用請求書', type: 'Excel', size: '45KB', file: '/templates/freelance-invoice.xlsx', downloadName: `ご請求書_${recipientName || '〇〇'}様.xlsx` },
+            { name: '勤務表フォーマット', type: 'Excel', size: '64KB', file: '/templates/timesheet.xlsx', downloadName: `勤務表_${recipientName || '〇〇'}様.xlsx` }
           ]}
         ]
         return (
@@ -283,6 +292,19 @@ function App() {
                   <ArrowLeft size={20} />
                 </button>
                 <h2>各種テンプレート</h2>
+              </div>
+              <div className="recipient-setting-box">
+                <div className="setting-label">
+                  <User size={16} />
+                  <span>宛名（保存名に反映）</span>
+                </div>
+                <input 
+                  type="text" 
+                  className="recipient-input" 
+                  placeholder="例：株式会社Spurs" 
+                  value={recipientName}
+                  onChange={handleRecipientNameChange}
+                />
               </div>
             </div>
 
@@ -416,7 +438,6 @@ function App() {
           { q: "採用方法、採用状況について", a: "有職も使用をしながらとはなりますが、基本は営業やエンジニアからの\nリファラル採用が中心となっています。" },
           { q: "体制案件（会社概要記載のもの）について", a: "基幹系システム（43人月）案件に関しては、プロパーも含めて参画している案件です\nその他の案件に関しては全てBP様にご支援をいただき、体制化をしています。" }
         ];
-
         return (
           <motion.section 
             className="template-view"
@@ -513,11 +534,11 @@ function App() {
  ・ 希 望 　：
  ・ 備 考 　：
 ---------------------------------------` },
-          { title: '条件詳細雛形', content: `上位会社：株式会社〇〇
+          { title: '条件詳細雛形', content: `上位会社：${recipientName || '株式会社〇〇'}
 ーーーーー
 【 案件名 】　：
 
-【 会社名 】　：株式会社〇〇
+【 会社名 】　：${recipientName || '株式会社〇〇'}
 【 要員名 】　：山田 太郎（やまだ たろう）様
 【 入場日 】　：2026年〇月1日
 【 初回期間 】：2026年〇月1日～〇月末日　
@@ -548,11 +569,11 @@ function App() {
 ・振込手数料は貴社にてご負担をお願いいたします。
 ーーーーー
 
-所属会社：株式会社〇〇
+所属会社：${recipientName || '株式会社〇〇'}
 ーーーーー
 【 案件名 】　：
 
-【 会社名 】　：株式会社〇〇
+【 会社名 】　：${recipientName || '株式会社〇〇'}
 【 要員名 】　：山田 太郎（やまだ たろう）様
 【 入場日 】　：2026年〇月1日
 【 初回期間 】：2026年〇月1日～〇月末日　
@@ -582,7 +603,7 @@ function App() {
 【特記事項】　：
 ・振込手数料は弊社にてご負担いたします。
 ーーーーー` },
-          { title: 'クラウドミーツ等挨拶文', content: `株式会社〇〇
+          { title: 'クラウドミーツ等挨拶文', content: `${recipientName || '株式会社〇〇'}
 〇〇様
 
 初めまして、
@@ -644,7 +665,7 @@ ITソリューション事業部 〇〇※名前
 Email    ：〇〇〇@spurs-inc.com
 弊社HP ： https://spurs-inc.com/
 ーー` },
-          { title: '問い合わせ受け雛形（返信用）', content: `株式会社〇〇
+          { title: '問い合わせ受け雛形（返信用）', content: `${recipientName || '株式会社〇〇'}
 〇〇様
 
 お世話になっております。
@@ -688,6 +709,19 @@ sales@spurs-inc.com
                   <ArrowLeft size={20} />
                 </button>
                 <h2>各種雛形（コピー用）</h2>
+              </div>
+              <div className="recipient-setting-box">
+                <div className="setting-label">
+                  <User size={16} />
+                  <span>宛名（コピー内容に反映）</span>
+                </div>
+                <input 
+                  type="text" 
+                  className="recipient-input" 
+                  placeholder="例：株式会社Spurs" 
+                  value={recipientName}
+                  onChange={handleRecipientNameChange}
+                />
               </div>
             </div>
 
