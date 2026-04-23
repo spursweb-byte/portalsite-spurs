@@ -125,6 +125,15 @@ function App() {
       tags: ['Mailing', 'Internal'],
       color: '#f59e0b', bg: 'linear-gradient(135deg, #fcd34d 0%, #d97706 100%)'
     },
+    { 
+      id: 6, 
+      name: 'パートナー注力情報一覧', 
+      url: 'https://docs.google.com/spreadsheets/d/13ST7sMDbLNYIJBUYn-beJ0wv_9qhSV9KGS3jZ2YQ5l4/edit?usp=sharing', 
+      icon: FileSpreadsheet, 
+      status: 'online', 
+      tags: ['Sales', 'Partner'],
+      color: '#22c55e', bg: 'linear-gradient(135deg, #4ade80 0%, #16a34a 100%)'
+    },
   ]
 
   if (loading) {
