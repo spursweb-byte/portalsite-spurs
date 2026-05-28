@@ -100,8 +100,8 @@ function App() {
     },
     { 
       id: 5, 
-      name: '注力情報サイト', 
-      url: 'https://spurs-portal.vercel.app/', 
+      name: 'スパサポ！', 
+      url: 'https://www.spu-suppo.com/', 
       icon: Target, 
       status: 'online', 
       tags: ['Focus', 'Internal'],
@@ -674,13 +674,13 @@ sales@spurs-inc.com
 ご多用中のところ誠に恐れ入りますが、ご検討のほどよろしくお願いいたします。
 
 弊社HP ： https://spurs-inc.com/
-注力情報サイト ： https://spurs-portal.vercel.app/` },
+注力情報サイト ：https://www.spu-suppo.com/` },
           { title: 'HP問い合わせ', content: `ご担当者様
 
 貴社のホームページを拝見し、
 〇〇事業についてご協業をさせていただきたくご連絡差し上げました。
 
-株式会社Spurs（スパーズ）の〇〇と申します。
+Spurs（スパーズ）株式会社の〇〇と申します。
 弊社は東海エリアでのIT事業の実績を基に、関東圏への本格進出を目指して本年（2026年）に設立いたしました。
 会社としては新しいものの、業界経験豊富な営業メンバーが揃っております。
 
@@ -693,12 +693,8 @@ sales@spurs-inc.com
 貴社ビジネスの一助となれるよう尽力をいたします。
 ご多用中のところ大変恐縮ですが、ご検討のほど何卒よろしくお願い申し上げます。
 
-ーー
-株式会社Spurs（スパーズ）
-ITソリューション事業部 〇〇※名前
-Email    ：〇〇〇@spurs-inc.com
 弊社HP ： https://spurs-inc.com/
-ーー` },
+注力情報サイト ：https://www.spu-suppo.com/` },
           { title: '問い合わせ受け雛形（返信用）', content: `${recipientName || '株式会社〇〇'}
 〇〇様
 

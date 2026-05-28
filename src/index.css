@@ -3,20 +3,26 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* Spurs Light Theme */
+  /* Spurs New Theme - White Base & Blue/Yellow/Green Accents */
   --bg-color: #ffffff;
-  --bg-subtle: #f8fafc;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --sidebar-bg: #f1f5f9;
-  --primary-green: #16a34a; /* Slightly darker green for better contrast on white */
-  --accent-green: #22c55e;
-  --text-main: #0f172a; /* Deep Navy text */
-  --text-dim: #64748b; /* Slate 500 */
-  --border-color: rgba(22, 163, 74, 0.15);
-  --glass-effect: blur(10px);
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --bg-subtle: #f9fafb;
+  --card-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  
+  --primary-blue: #2d77b5;
+  --primary-blue-glow: rgba(45, 119, 181, 0.12);
+  --accent-yellow: #f7d303;
+  --accent-green: #30b776;
+  
+  --text-main: #1f2937; /* Gray 800 */
+  --text-dim: #6b7280; /* Gray 500 */
+  --text-accent: #111827; /* Gray 900 */
+  
+  --border-color: #e5e7eb; /* Gray 200 */
+  --glass-effect: blur(12px);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   
   color-scheme: light;
   background-color: var(--bg-color);
@@ -34,7 +40,7 @@ body {
   place-items: flex-start;
   min-width: 320px;
   min-height: 100vh;
-  background: radial-gradient(circle at top right, #f0fdf4 0%, #ffffff 40%);
+  background: radial-gradient(circle at top right, #f0f7ff 0%, #ffffff 40%);
   background-attachment: fixed;
 }
 
