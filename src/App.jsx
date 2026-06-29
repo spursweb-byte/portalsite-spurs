@@ -295,15 +295,19 @@ function App() {
       
       case 'templates':
         const templatesList = [
-          { category: '契約関連', items: [
+          { category: '契約書類', items: [
             { name: '秘密保持契約書（NDA）', type: 'Word', size: '24KB', file: '/templates/nda.docx', downloadName: `秘密保持契約書_${recipientName || '㈱〇〇'}御中.docx` },
             { name: '業務委託基本契約書（法人）', type: 'Word', size: '32KB', file: '/templates/kihon-keiyaku.docx', downloadName: `基本契約書_${recipientName || '㈱〇〇'}御中.docx` },
-            { name: 'フリーランス基本契約書', type: 'Word', size: '28KB', file: '/templates/freelance-keiyaku.docx', downloadName: `フリーランス基本契約書_${recipientName || '〇〇'}様.docx` }
+            { name: 'フリーランス基本契約書', type: 'Word', size: '28KB', file: '/templates/freelance-keiyaku.docx', downloadName: `フリーランス基本契約書_${recipientName || '〇〇'}様.docx` },
+            { name: '確定進行サポートサービス利用契約書', type: 'Word', size: '19KB', file: '/templates/kakutei-shinkou-support.docx', downloadName: `確定進行サポートサービス利用契約書_${recipientName || '㈱〇〇'}御中.docx` },
+            { name: '利用申し込み件報酬控除同意書', type: 'PDF', size: '1.8MB', file: '/templates/riyou-moushikomi-douisho.pdf', downloadName: `利用申し込み件報酬控除同意書_${recipientName || '〇〇'}様.pdf` },
+            { name: '携帯端末貸与契約書', type: 'Word', size: '30KB', file: '/templates/keitai-taiyo.docx', downloadName: `携帯端末貸与契約書_${recipientName || '〇〇'}様.docx` }
           ]},
           { category: 'セールス・提案', items: [
             { name: '会社説明資料（最新版）', type: 'PDF', size: '4.2MB', file: '/templates/company-profile.pdf', downloadName: 'Spurs会社説明資料.pdf' },
             { name: 'フリーランス登録説明資料', type: 'PDF', size: '1.5MB', file: '/templates/freelance-registration.pdf', downloadName: 'フリーランス登録説明資料.pdf' },
-            { name: 'フリーランス開業マニュアル', type: 'PDF', size: '1.2MB', file: '/templates/freelance-manual.pdf', downloadName: 'フリーランス開業マニュアル.pdf' }
+            { name: 'フリーランス開業マニュアル', type: 'PDF', size: '1.2MB', file: '/templates/freelance-manual.pdf', downloadName: 'フリーランス開業マニュアル.pdf' },
+            { name: '確定申告サポートPOP', type: 'PNG', size: '1.8MB', file: '/templates/kakutei-shinkoku-pop.png', downloadName: '確定申告サポートPOP.png' }
           ]},
           { category: '社内管理・その他', items: [
             { name: 'フリーランス用請求書', type: 'Excel', size: '45KB', file: '/templates/freelance-invoice.xlsx', downloadName: `ご請求書_${recipientName || '〇〇'}様.xlsx` },
@@ -356,7 +360,7 @@ function App() {
                         <div className="file-card-inner">
                           <div className={`file-badge ${item.type.toLowerCase()}`}>
                             {item.type === 'Excel' && <FileSpreadsheet size={22} />}
-                            {(item.type === 'Word' || item.type === 'Text' || item.type === 'PDF') && <FileText size={22} />}
+                            {(item.type === 'Word' || item.type === 'Text' || item.type === 'PDF' || item.type === 'PNG') && <FileText size={22} />}
                             {item.type === 'PPT' && <Files size={22} />}
                           </div>
                           <div className="file-details">
