@@ -300,7 +300,7 @@ function App() {
             { name: '業務委託基本契約書（法人）', type: 'Word', size: '32KB', file: '/templates/kihon-keiyaku.docx', downloadName: `基本契約書_${recipientName || '㈱〇〇'}御中.docx` },
             { name: 'フリーランス基本契約書', type: 'Word', size: '28KB', file: '/templates/freelance-keiyaku.docx', downloadName: `フリーランス基本契約書_${recipientName || '〇〇'}様.docx` },
             { name: '確定進行サポートサービス利用契約書', type: 'Word', size: '19KB', file: '/templates/kakutei-shinkou-support.docx', downloadName: `確定進行サポートサービス利用契約書_${recipientName || '㈱〇〇'}御中.docx` },
-            { name: '利用申し込み件報酬控除同意書', type: 'PDF', size: '1.8MB', file: '/templates/riyou-moushikomi-douisho.pdf', downloadName: `利用申し込み件報酬控除同意書_${recipientName || '〇〇'}様.pdf` },
+            { name: '利用申し込み兼報酬控除同意書', type: 'PDF', size: '1.8MB', file: '/templates/riyou-moushikomi-douisho.pdf', downloadName: `利用申し込み兼報酬控除同意書_${recipientName || '〇〇'}様.pdf` },
             { name: '携帯端末貸与契約書', type: 'Word', size: '30KB', file: '/templates/keitai-taiyo.docx', downloadName: `携帯端末貸与契約書_${recipientName || '〇〇'}様.docx` }
           ]},
           { category: 'セールス・提案', items: [
