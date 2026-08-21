@@ -109,24 +109,6 @@ function App() {
       color: '#0ea5e9', bg: 'linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)'
     },
     { 
-      id: 3, 
-      name: 'パートナー管理', 
-      url: 'https://partner-nexus.vercel.app/', 
-      icon: Briefcase, 
-      status: 'online', 
-      tags: ['CRM', 'External'],
-      color: '#d946ef', bg: 'linear-gradient(135deg, #e879f9 0%, #c026d3 100%)'
-    },
-    { 
-      id: 4, 
-      name: 'メール配信', 
-      url: 'https://mailing-system-psi.vercel.app/', 
-      icon: Mail, 
-      status: 'online', 
-      tags: ['Mailing', 'Internal'],
-      color: '#f59e0b', bg: 'linear-gradient(135deg, #fcd34d 0%, #d97706 100%)'
-    },
-    { 
       id: 6, 
       name: 'パートナー注力情報一覧', 
       url: 'https://docs.google.com/spreadsheets/d/13ST7sMDbLNYIJBUYn-beJ0wv_9qhSV9KGS3jZ2YQ5l4/edit?usp=sharing', 
