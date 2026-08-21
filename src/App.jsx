@@ -100,8 +100,9 @@ function App() {
     },
     { 
       id: 5, 
-      name: 'スパサポ！', 
-      url: 'https://www.spu-suppo.com/', 
+      name: 'coreee!', 
+      url: 'https://www.coreee.jp/', 
+      copyUrl: 'https://www.coreee.jp/u/spurs-inc',
       icon: Target, 
       status: 'online', 
       tags: ['Focus', 'Internal'],
@@ -191,11 +192,11 @@ function App() {
                     <div className="iroha-card-content">
                       <h3>{site.name}</h3>
                       <div className="url-copy-container">
-                        <p className="url-copy-cool">{site.url.replace('https://', '')}</p>
+                        <p className="url-copy-cool">{(site.copyUrl || site.url).replace('https://', '')}</p>
                         <button 
                           className="url-copy-btn-mini" 
                           onClick={(e) => {
-                            navigator.clipboard.writeText(site.url);
+                            navigator.clipboard.writeText(site.copyUrl || site.url);
                             const btn = e.currentTarget;
                             const originalContent = btn.innerHTML;
                             btn.innerHTML = 'Copied!';
@@ -678,7 +679,7 @@ sales@spurs-inc.com
 ご多用中のところ誠に恐れ入りますが、ご検討のほどよろしくお願いいたします。
 
 弊社HP ： https://spurs-inc.com/
-注力情報サイト ：https://www.spu-suppo.com/` },
+注力情報サイト ：https://www.coreee.jp/u/spurs-inc` },
           { title: 'HP問い合わせ', content: `ご担当者様
 
 貴社のホームページを拝見し、
@@ -698,7 +699,7 @@ Spurs（スパーズ）株式会社の〇〇と申します。
 ご多用中のところ大変恐縮ですが、ご検討のほど何卒よろしくお願い申し上げます。
 
 弊社HP ： https://spurs-inc.com/
-注力情報サイト ：https://www.spu-suppo.com/` },
+注力情報サイト ：https://www.coreee.jp/u/spurs-inc` },
           { title: '問い合わせ受け雛形（返信用）', content: `${recipientName || '株式会社〇〇'}
 〇〇様
 
