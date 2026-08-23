@@ -295,9 +295,9 @@ function App() {
           { category: '社内管理・その他', items: [
             { name: 'フリーランス用請求書', type: 'Excel', size: '45KB', file: '/templates/freelance-invoice.xlsx', downloadName: `ご請求書_${recipientName || '〇〇'}様.xlsx` },
             { name: '勤務表フォーマット', type: 'Excel', size: '64KB', file: '/templates/timesheet.xlsx', downloadName: `勤務表_${recipientName || '〇〇'}様.xlsx` },
-            { name: '伊佐地名刺データ', type: 'PDF', size: '580KB', file: '/templates/isaji_meishi.pdf', downloadName: 'isaji_meishi.pdf' },
-            { name: '田安名刺データ', type: 'PDF', size: '583KB', file: '/templates/tayasu_meishi.pdf', downloadName: 'tayasu_meishi.pdf' },
-            { name: '黒岩名刺データ', type: 'PDF', size: '588KB', file: '/templates/kuro_meishi.pdf', downloadName: 'kuro_meishi.pdf' }
+            { name: '伊佐地名刺データ', type: 'PDF', size: '580KB', file: '/templates/isaji_meishi.pdf', downloadName: '伊佐地名刺データ.pdf' },
+            { name: '田安名刺データ', type: 'PDF', size: '583KB', file: '/templates/tayasu_meishi.pdf', downloadName: '田安名刺データ.pdf' },
+            { name: '黒岩名刺データ', type: 'PDF', size: '588KB', file: '/templates/kuro_meishi.pdf', downloadName: '黒岩名刺データ.pdf' }
           ]}
         ]
         return (
